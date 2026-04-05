@@ -149,15 +149,20 @@ export default function ProductPage() {
 
             {/* Price & Add to Cart */}
             <div className="flex flex-col sm:flex-row items-center gap-6 mt-4">
-              <div className="w-full sm:w-56 flex-shrink-0 flex items-baseline gap-3">
-                <span className="text-4xl font-black text-ayn-dark">
-                  ₹{currentVariant.price.toLocaleString()}
-                </span>
-                {currentVariant.originalPrice && (
-                  <span className="text-xl md:text-2xl text-gray-400 font-medium line-through">
-                    ₹{currentVariant.originalPrice.toLocaleString()}
+              <div className="w-full sm:w-56 flex-shrink-0">
+                <div className="flex items-baseline gap-3">
+                  <span className="text-4xl font-black text-ayn-dark">
+                    ₹{currentVariant.price.toLocaleString()}
                   </span>
-                )}
+                  {currentVariant.originalPrice && (
+                    <span className="text-xl md:text-2xl text-gray-400 font-medium line-through">
+                      ₹{currentVariant.originalPrice.toLocaleString()}
+                    </span>
+                  )}
+                </div>
+                <p className="text-[10px] text-ayn-text-light font-bold uppercase mt-1">
+                  Incl. of all taxes
+                </p>
               </div>
               <button
                 onClick={handleAddToCart}

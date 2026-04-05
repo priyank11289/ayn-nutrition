@@ -212,6 +212,24 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* Regulatory Info */}
+        <div className="border-t border-white/10 py-4">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-[10px] uppercase tracking-widest text-white/40 font-bold">
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-ayn-teal"></span>
+              FSSAI LIC NO: 100XXXXXXXXXXX
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-ayn-teal"></span>
+              ISO 22000 CERTIFIED
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-ayn-teal"></span>
+              GMP COMPLIANT FACILITY
+            </div>
+          </div>
+        </div>
+
         {/* Bottom Bar */}
         <div className="border-t border-white/10 py-3">
           <div className="flex flex-col md:flex-row items-center justify-between gap-2">

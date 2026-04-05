@@ -149,6 +149,9 @@ export default function ProductShowcase() {
                         ₹{product.variants.find((v) => v.servings === selectedVariants[product.id])?.originalPrice}
                       </span>
                     </div>
+                    <span className="text-[10px] text-ayn-text-light font-bold uppercase block mt-0.5">
+                      Incl. of all taxes
+                    </span>
                     <span className="text-sm text-ayn-text-light block mt-0.5">
                       / {selectedVariants[product.id]} serv
                     </span>
