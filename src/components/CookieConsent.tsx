@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { initGA } from '@/lib/analytics';
 import { ShieldCheck, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function CookieConsent() {
   const [showBanner, setShowBanner] = useState(false);
@@ -48,7 +49,7 @@ export default function CookieConsent() {
             <h3 className="text-lg font-bold text-ayn-dark mb-1">Privacy & Cookies</h3>
             <p className="text-xs text-ayn-text-light leading-relaxed">
               We use analytics to improve your experience. Choosing "Accept" helps us refine our personalized formulas. 
-              <a href="/legal/privacy-policy" className="text-ayn-teal ml-1 hover:underline">Learn more</a>
+              <Link to="/legal/privacy-policy" className="text-ayn-teal ml-1 hover:underline">Learn more</Link>
             </p>
           </div>
         </div>
