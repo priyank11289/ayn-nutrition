@@ -47,7 +47,7 @@ const footerLinks = {
     { name: 'Our Experts', href: '#experts' },
     { name: 'Blog', href: '#' },
     { name: 'FAQs', href: '#faq' },
-    { name: 'Contact Us', href: '#faq' },
+    { name: 'Contact Us', href: '/legal/contact-us' },
   ],
   legal: [
     { name: 'Privacy Policy', href: '/legal/privacy-policy' },

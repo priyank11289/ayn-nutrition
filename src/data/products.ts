@@ -1,8 +1,10 @@
 import { Shield, Zap, Sparkles } from 'lucide-react';
+import type { Product } from '../types/product';
 
-export const products = [
+export const products: Product[] = [
   {
     id: 'junior-safe',
+    slug: 'junior-safe',
     name: 'AYN Junior Safe Creatine',
     badge: "India's First | Teen & Young Athletes",
     description: 'Low-dose creatine with bone support for growing athletes',
@@ -60,6 +62,7 @@ export const products = [
   },
   {
     id: 'hair-safe',
+    slug: 'hair-safe',
     name: 'AYN Hair Safe Creatine',
     badge: "India's First | Hair Protection Formula",
     description: 'Advanced creatine with DHT blockers and hair nutrients',
@@ -122,6 +125,7 @@ export const products = [
   },
   {
     id: 'pro-athlete',
+    slug: 'pro-athlete',
     name: 'AYN Pro Athletes Creatine',
     badge: 'Maximum Performance',
     description: 'Triple-blend creatine complex for elite performance',

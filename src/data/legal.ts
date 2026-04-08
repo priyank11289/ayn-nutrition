@@ -70,5 +70,24 @@ export const legalData: Record<string, { title: string; content: string }> = {
       <h2>3. The Cookies We Set</h2>
       <p>If you create an account with us then we will use cookies for the management of the signup process and general administration. These cookies will usually be deleted when you log out however in some cases they may remain afterwards to remember your site preferences when logged out.</p>
     `
+  },
+  'contact-us': {
+    title: 'Contact Us',
+    content: `
+      <h2>Get in Touch</h2>
+      <p>If you have any questions, concerns, or feedback, please feel free to reach out to us. We will get back to you as soon as possible.</p>
+      
+      <h2>Contact Information</h2>
+      <p>
+        <strong>Email:</strong> support@aynnutrition.in<br>
+        <strong>Phone:</strong> +91 99999 99999
+      </p>
+      
+      <h2>Business Address</h2>
+      <p>
+        AYN Nutrition<br>
+        Mumbai, Maharashtra, India<br>
+      </p>
+    `
   }
 };

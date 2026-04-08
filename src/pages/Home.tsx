@@ -1,6 +1,7 @@
 
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { SEO } from '../components/SEO';
 import Hero from '../sections/Hero';
 import ProblemSolution from '../sections/ProblemSolution';
 import ProductShowcase from '../sections/ProductShowcase';
@@ -32,8 +33,24 @@ export default function Home() {
     }
   }, [location]);
 
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AYN Nutrition",
+    "url": "https://ayn-nutrition.vercel.app",
+    "logo": "https://ayn-nutrition.vercel.app/images/logo.png",
+    "sameAs": [
+      "https://www.instagram.com/aynnutrition"
+    ]
+  };
+
   return (
     <>
+      <SEO 
+        title="AYN Nutrition — India's First Personalized Creatine | Buy Online"
+        description="Discover AYN Nutrition's specialized creatine formulas. Engineered for teen athletes, hair protection, and elite performance. Formulated for you, fueled by science."
+        jsonLd={organizationJsonLd}
+      />
       <Hero />
       <ProblemSolution />
       <ProductShowcase />

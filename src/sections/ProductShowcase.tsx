@@ -91,7 +91,10 @@ export default function ProductShowcase() {
               {/* Content */}
               <div className="p-6 flex-1 flex flex-col">
                 <div className="flex items-center gap-2 mb-2">
-                  <product.icon className={`w-5 h-5 ${product.textColor}`} />
+                  {(() => {
+                    const Icon = product.icon;
+                    return <Icon className={`w-5 h-5 ${product.textColor}`} />;
+                  })()}
                   <span className={`text-sm font-semibold ${product.textColor}`}>
                     {product.color === 'blue' ? 'Junior Formula' : product.color === 'emerald' ? 'Hair Protection' : 'Elite Performance'}
                   </span>

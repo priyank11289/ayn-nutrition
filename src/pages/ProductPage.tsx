@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { ShoppingCart, Check, ChevronRight } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { products } from '../data/products';
+import { SEO } from '../components/SEO';
 
 export default function ProductPage() {
   const { id } = useParams<{ id: string }>();
@@ -51,8 +52,33 @@ export default function ProductPage() {
     });
   };
 
+  const productJsonLd = {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": product.name,
+    "image": `https://ayn-nutrition.vercel.app${product.image}`,
+    "description": product.description,
+    "brand": {
+      "@type": "Brand",
+      "name": "AYN Nutrition"
+    },
+    "offers": {
+      "@type": "Offer",
+      "url": `https://ayn-nutrition.vercel.app/product/${product.id}`,
+      "priceCurrency": "INR",
+      "price": currentVariant.price,
+      "availability": "https://schema.org/InStock"
+    }
+  };
+
   return (
     <div className="bg-white min-h-screen pt-24 lg:pt-32 animation-fade-in">
+      <SEO 
+        title={`${product.name} — ${product.badge} | AYN Nutrition`}
+        description={product.longDescription}
+        image={`https://ayn-nutrition.vercel.app${product.image}`}
+        jsonLd={productJsonLd}
+      />
       {/* Breadcrumb */}
       <div className="container mx-auto px-6 max-w-7xl mb-8">
         <nav className="flex items-center gap-2 text-sm text-ayn-text-light font-medium">
