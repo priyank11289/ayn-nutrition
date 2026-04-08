@@ -181,12 +181,12 @@ export default function ProductPage() {
               <span className="text-xs font-bold text-ayn-text-light tracking-wider uppercase block mb-4">
                 Select Size
               </span>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-2 sm:gap-4">
                 {product.variants.map(variant => (
                   <button
                     key={variant.servings}
                     onClick={() => setSelectedServings(variant.servings)}
-                    className={`flex-1 min-w-[140px] px-6 py-4 rounded-xl border-2 text-left transition-all relative overflow-hidden ${
+                    className={`flex-1 min-w-[120px] sm:min-w-[140px] px-4 py-3 sm:px-6 sm:py-4 rounded-xl border-2 text-left transition-all relative overflow-hidden ${
                       selectedServings === variant.servings 
                         ? `${product.accentColor} text-white shadow-md border-transparent` 
                         : 'border-transparent bg-gray-50 hover:bg-gray-100'
@@ -208,28 +208,27 @@ export default function ProductPage() {
               </div>
             </div>
 
-            {/* Price & Add to Cart */}
-            <div className="flex flex-col sm:flex-row items-center gap-6 mt-4">
-              <div className="w-full sm:w-56 flex-shrink-0">
-                <div className="flex items-baseline gap-3">
-                  <span className="text-4xl font-black text-ayn-dark">
+            <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 mt-4">
+              <div className="w-full sm:w-56 flex-shrink-0 text-center sm:text-left">
+                <div className="flex items-baseline justify-center sm:justify-start gap-3">
+                  <span className="text-3xl sm:text-4xl font-black text-ayn-dark">
                     ₹{currentVariant.price.toLocaleString()}
                   </span>
                   {currentVariant.originalPrice && (
-                    <span className="text-xl md:text-2xl text-gray-400 font-medium line-through">
+                    <span className="text-lg sm:text-xl text-gray-400 font-medium line-through">
                       ₹{currentVariant.originalPrice.toLocaleString()}
                     </span>
                   )}
                 </div>
                 <p className="text-[10px] text-ayn-text-light font-bold uppercase mt-1">
-                  Incl. of all taxes
+                  Incl. of all taxes / {selectedServings} serv
                 </p>
               </div>
               <button
                 onClick={handleAddToCart}
-                className={`w-full flex-1 ${product.accentColor} text-white text-lg font-bold py-4 px-8 rounded-xl flex items-center justify-center gap-3 hover:opacity-90 transition-all shadow-xl hover:-translate-y-1`}
+                className={`w-full flex-1 ${product.accentColor} text-white text-base sm:text-lg font-bold py-4 px-8 rounded-xl flex items-center justify-center gap-3 hover:opacity-90 transition-all shadow-xl hover:-translate-y-1 active:scale-95`}
               >
-                <ShoppingCart className="w-6 h-6" />
+                <ShoppingCart className="w-5 sm:w-6 h-5 sm:h-6" />
                 Add to Cart
               </button>
             </div>

@@ -42,7 +42,7 @@ export default function Hero() {
       <div className="w-full section-padding relative z-10 pt-0">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           {/* Content Side */}
-          <div className="flex flex-col justify-center order-2 lg:order-1">
+          <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left order-2 lg:order-1">
             {/* Badge */}
             <FadeIn delay={0}>
               <div className="inline-flex items-center gap-2 bg-ayn-teal/10 text-ayn-teal px-4 py-2 rounded-full w-fit mb-6">
@@ -53,7 +53,7 @@ export default function Hero() {
 
             {/* Headline */}
             <FadeIn delay={0.1}>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-ayn-dark leading-[1.1] mb-6">
+              <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-ayn-dark leading-[1.1] mb-6">
                 India's First{' '}
                 <span className="text-gradient">Personalized</span>{' '}
                 Creatine Formulations
@@ -62,24 +62,24 @@ export default function Hero() {
 
             {/* Subheadline */}
             <FadeIn delay={0.2}>
-              <p className="text-lg lg:text-xl text-ayn-text-light max-w-xl mb-8">
+              <p className="text-base sm:text-lg lg:text-xl text-ayn-text-light max-w-xl mb-8">
                 Science-backed, goal-specific nutrition designed for your unique performance needs. From teen athletes to pro bodybuilders — find your perfect formula.
               </p>
             </FadeIn>
 
             {/* CTA Buttons */}
             <FadeIn delay={0.3}>
-              <div className="flex flex-col sm:flex-row gap-4 mb-10">
+              <div className="flex flex-col sm:flex-row gap-4 mb-10 w-full sm:w-auto">
                 <button 
                   onClick={scrollToQuiz}
-                  className="btn-primary flex items-center justify-center gap-2 group text-lg"
+                  className="btn-primary flex items-center justify-center gap-2 group text-base sm:text-lg w-full sm:w-auto"
                 >
                   Find Your Formula
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
                 <button 
                   onClick={scrollToProducts}
-                  className="btn-outline flex items-center justify-center text-lg"
+                  className="btn-outline flex items-center justify-center text-base sm:text-lg w-full sm:w-auto"
                 >
                   Shop Creatine
                 </button>
@@ -88,14 +88,14 @@ export default function Hero() {
 
             {/* Trust Badges */}
             <FadeIn delay={0.4}>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4">
                 {trustBadges.map((badge, index) => (
                   <div 
                     key={index} 
-                    className="flex items-center gap-2 bg-white/60 backdrop-blur-sm px-4 py-2 rounded-full"
+                    className="flex items-center gap-2 bg-white/60 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full"
                   >
-                    <badge.icon className="w-4 h-4 text-ayn-teal" />
-                    <span className="text-sm font-medium text-ayn-dark">{badge.text}</span>
+                    <badge.icon className="w-3.5 h-3.5 sm:w-4 h-4 text-ayn-teal" />
+                    <span className="text-xs sm:text-sm font-medium text-ayn-dark">{badge.text}</span>
                   </div>
                 ))}
               </div>

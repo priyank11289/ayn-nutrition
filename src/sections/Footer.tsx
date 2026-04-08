@@ -194,7 +194,7 @@ export default function Footer() {
             </div>
 
             {/* Legal Links */}
-            <div className="col-span-1 md:col-span-2 lg:col-span-2">
+            <div className="col-span-2 md:col-span-2 lg:col-span-2">
               <h4 className="font-bold text-white mb-2">Legal</h4>
               <ul className="space-y-1">
                 {footerLinks.legal.map((link) => (

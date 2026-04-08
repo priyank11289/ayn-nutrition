@@ -100,23 +100,25 @@ export default function ExpertPanel() {
 
         {/* Bottom Stats */}
         <FadeIn delay={0.5}>
-          <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-8 bg-white rounded-2xl px-8 py-4 shadow-lg">
-            <div className="text-center">
-              <span className="text-3xl font-black text-ayn-teal block">40+</span>
-              <span className="text-sm text-ayn-text-light">Combined Years</span>
+          <div className="mt-16 flex justify-center">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-0 bg-white rounded-2xl px-6 py-6 sm:px-8 sm:py-4 shadow-lg w-full max-w-2xl sm:w-auto">
+              <div className="text-center sm:px-8">
+                <span className="text-2xl sm:text-3xl font-black text-ayn-teal block">40+</span>
+                <span className="text-xs sm:text-sm text-ayn-text-light">Combined Years</span>
+              </div>
+              <div className="hidden sm:block w-px h-12 bg-gray-200 self-center"></div>
+              <div className="sm:hidden w-full h-px bg-gray-100"></div>
+              <div className="text-center sm:px-8">
+                <span className="text-2xl sm:text-3xl font-black text-ayn-coral block">3</span>
+                <span className="text-xs sm:text-sm text-ayn-text-light">Expert Advisors</span>
+              </div>
+              <div className="hidden sm:block w-px h-12 bg-gray-200 self-center"></div>
+              <div className="sm:hidden w-full h-px bg-gray-100"></div>
+              <div className="text-center sm:px-8">
+                <span className="text-2xl sm:text-3xl font-black text-ayn-blue block">100%</span>
+                <span className="text-xs sm:text-sm text-ayn-text-light">Science-Backed</span>
+              </div>
             </div>
-            <div className="w-px h-12 bg-gray-200"></div>
-            <div className="text-center">
-              <span className="text-3xl font-black text-ayn-coral block">3</span>
-              <span className="text-sm text-ayn-text-light">Expert Advisors</span>
-            </div>
-            <div className="w-px h-12 bg-gray-200"></div>
-            <div className="text-center">
-              <span className="text-3xl font-black text-ayn-blue block">100%</span>
-              <span className="text-sm text-ayn-text-light">Science-Backed</span>
-            </div>
-          </div>
           </div>
         </FadeIn>
       </div>
