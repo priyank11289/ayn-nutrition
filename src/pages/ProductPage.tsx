@@ -11,24 +11,27 @@ export default function ProductPage() {
   const product = products.find(p => p.slug === slug);
   const { addToCart } = useCart();
 
-  const [selectedServings, setSelectedServings] = useState<number>(30);
-  const [selectedFlavor, setSelectedFlavor] = useState<string>('Unflavored');
+  const [currentSlug, setCurrentSlug] = useState(slug);
+  const [selectedServings, setSelectedServings] = useState<number>(() => {
+    if (!product) return 30;
+    return product.variants.some(v => v.servings === 30) ? 30 : product.variants[0].servings;
+  });
+  const [selectedFlavor, setSelectedFlavor] = useState<string>(() => {
+    if (!product) return 'Unflavored';
+    return product.flavors.includes('Unflavored') ? 'Unflavored' : product.flavors[0];
+  });
+
+  // Derived state to quickly reset on navigation without firing an effect after mount
+  if (slug !== currentSlug) {
+    setCurrentSlug(slug);
+    if (product) {
+      setSelectedServings(product.variants.some(v => v.servings === 30) ? 30 : product.variants[0].servings);
+      setSelectedFlavor(product.flavors.includes('Unflavored') ? 'Unflavored' : product.flavors[0]);
+    }
+  }
 
   useEffect(() => {
-    if (product) {
-      // Prefer 30 servings as default, otherwise the first available
-      const defaultServings = product.variants.some(v => v.servings === 30) ? 30 : product.variants[0].servings;
-      setSelectedServings(defaultServings);
-      
-      // Prefer Unflavored as default, otherwise the first available
-      const defaultFlavor = product.flavors.includes('Unflavored') ? 'Unflavored' : product.flavors[0];
-      setSelectedFlavor(defaultFlavor);
-      
-      // Track product view
-      trackProductView(product);
-    }
-    
-    // Smooth scrolling is managed by JS now, so this is instant
+    if (product) trackProductView(product);
     window.scrollTo(0, 0);
   }, [product]);
 

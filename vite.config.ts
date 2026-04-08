@@ -32,5 +32,16 @@ export default defineConfig({
 
   preview: {
     allowedHosts: true
+  },
+  
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'ui-vendor': ['lucide-react', 'framer-motion', 'embla-carousel-react'],
+        }
+      }
+    }
   }
 });
