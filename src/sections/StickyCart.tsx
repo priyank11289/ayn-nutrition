@@ -1,5 +1,6 @@
 import { ShoppingCart, Plus, Minus, Trash2, ArrowRight } from 'lucide-react';
 import { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useCart } from '@/context/CartContext';
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { toast } from 'sonner';
@@ -8,6 +9,8 @@ import { trackBeginCheckout, trackPurchase } from '@/lib/analytics';
 export default function StickyCart() {
   const { items, totalItems, totalPrice, updateQuantity, removeFromCart, isCartOpen, setIsCartOpen } = useCart();
   const [isCheckingOut, setIsCheckingOut] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleCheckout = async () => {
     if (items.length === 0) {
@@ -52,9 +55,19 @@ export default function StickyCart() {
                 <p className="text-sm text-ayn-text-light mb-4">
                   Add some products to get started
                 </p>
-                <a href="#products" className="btn-primary">
+                <button 
+                  onClick={() => {
+                    setIsCartOpen(false);
+                    if (location.pathname !== '/') {
+                      navigate('/#products');
+                    } else {
+                      document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }} 
+                  className="btn-primary"
+                >
                   Browse Products
-                </a>
+                </button>
               </div>
             ) : (
               <>
