@@ -167,7 +167,7 @@ export default function ProductPage() {
                     className={`px-5 py-3 rounded-xl border-2 font-bold text-sm transition-all ${
                       selectedFlavor === flavor 
                         ? `${product.accentColor} text-white shadow-md border-transparent` 
-                        : 'border-transparent bg-gray-50 text-ayn-text-light hover:bg-gray-100'
+                        : 'border-transparent bg-gray-50 text-gray-600 hover:bg-gray-100'
                     }`}
                   >
                     {flavor}
@@ -197,10 +197,10 @@ export default function ProductPage() {
                         <Check className="w-4 h-4 text-white" />
                       </div>
                     )}
-                    <div className={`font-bold text-lg mb-1 ${selectedServings === variant.servings ? 'text-white' : 'text-ayn-dark'}`}>
+                    <div className={`font-bold text-lg mb-1 ${selectedServings === variant.servings ? 'text-white' : 'text-gray-800'}`}>
                       {variant.servings} Servings
                     </div>
-                    <div className={`text-xs font-medium ${selectedServings === variant.servings ? 'text-white/80' : 'text-ayn-text-light'}`}>
+                    <div className={`text-xs font-medium ${selectedServings === variant.servings ? 'text-white/80' : 'text-gray-500'}`}>
                       ₹{variant.perServing.toFixed(2)} / serving
                     </div>
                   </button>

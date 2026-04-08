@@ -53,22 +53,23 @@
 @layer components {
   .btn-primary {
     @apply bg-ayn-teal text-white px-6 py-3 rounded-xl font-semibold 
-           hover:bg-opacity-90 transition-all duration-300 
-           hover:shadow-lg hover:shadow-ayn-teal/30
-           active:scale-95;
+           hover:bg-opacity-90 transition-all duration-300 transform
+           hover:shadow-[0_8px_20px_-4px_rgba(0,212,170,0.4)]
+           hover:-translate-y-0.5 active:scale-95;
   }
   
   .btn-coral {
     @apply bg-ayn-coral text-white px-6 py-3 rounded-xl font-semibold 
-           hover:bg-opacity-90 transition-all duration-300 
-           hover:shadow-lg hover:shadow-ayn-coral/30
-           active:scale-95;
+           hover:bg-opacity-90 transition-all duration-300 transform
+           hover:shadow-[0_8px_20px_-4px_rgba(255,107,107,0.4)]
+           hover:-translate-y-0.5 active:scale-95;
   }
   
   .btn-outline {
     @apply border-2 border-ayn-dark text-ayn-dark px-6 py-3 rounded-xl font-semibold 
-           hover:bg-ayn-dark hover:text-white transition-all duration-300
-           active:scale-95;
+           hover:bg-ayn-dark hover:text-white transition-all duration-300 transform
+           hover:shadow-[0_8px_20px_-4px_rgba(0,0,0,0.2)]
+           hover:-translate-y-0.5 active:scale-95;
   }
   
   .card-premium {
@@ -109,7 +110,7 @@
   }
   
   .glass-effect {
-    @apply backdrop-blur-xl bg-white/80;
+    @apply backdrop-blur-lg bg-white/70 border-b border-white/20;
   }
   
   .scrollbar-hide {
