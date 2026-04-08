@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useState, useCallback } from 'react';
 import { toast } from 'sonner';
+import { trackAddToCart } from '@/lib/analytics';
+import { products } from '@/data/products';
 
 export interface CartItem {
   id: string;
@@ -46,6 +48,13 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       }
       
       toast.success(`${newItem.name} added to cart!`);
+      
+      // Track add to cart event
+      const product = products.find(p => p.id === newItem.id);
+      if (product) {
+        trackAddToCart(product, newItem.variant, newItem.servings, newItem.price);
+      }
+      
       return [...prev, { ...newItem, quantity: 1 }];
     });
   }, []);

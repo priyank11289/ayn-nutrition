@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { useCart } from '@/context/CartContext';
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { toast } from 'sonner';
+import { trackBeginCheckout, trackPurchase } from '@/lib/analytics';
 
 export default function StickyCart() {
   const { items, totalItems, totalPrice, updateQuantity, removeFromCart, isCartOpen, setIsCartOpen } = useCart();
@@ -15,11 +16,18 @@ export default function StickyCart() {
     }
     
     setIsCheckingOut(true);
+
+    // Track begin checkout
+    trackBeginCheckout(items, totalPrice);
     
     // Simulate Shopify connection sequence
     await new Promise(resolve => setTimeout(resolve, 1500));
     
     setIsCheckingOut(false);
+    
+    // For demo purposes, we'll track a purchase event here
+    trackPurchase(items, totalPrice, `MOCK-${Date.now()}`);
+    
     toast.success('Shopify checkout flow will mount here!', { duration: 4000 });
   };
 

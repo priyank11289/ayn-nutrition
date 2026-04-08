@@ -5,6 +5,7 @@ import Footer from './sections/Footer';
 import StickyCart from './sections/StickyCart';
 import { CartProvider } from './context/CartContext';
 import { Toaster } from '@/components/ui/sonner';
+import CookieConsent from './components/CookieConsent';
 import { Home, ProductPage, CategoryPage, LegalPage } from './pages';
 
 import AnnouncementBar from './components/AnnouncementBar';
@@ -15,6 +16,8 @@ function App() {
       <CartProvider>
         <div className="min-h-screen bg-ayn-sand flex flex-col">
           <AnnouncementBar />
+          <StickyCart />
+          <CookieConsent />
           <Header />
           <main className="flex-1">
             <Routes>

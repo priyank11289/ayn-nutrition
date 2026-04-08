@@ -51,9 +51,9 @@ const footerLinks = {
   ],
   legal: [
     { name: 'Privacy Policy', href: '/legal/privacy-policy' },
-    { name: 'Terms of Service', href: '/legal/terms-of-service' },
+    { name: 'Terms & Conditions', href: '/legal/terms-and-conditions' },
     { name: 'Shipping Policy', href: '/legal/shipping-policy' },
-    { name: 'Return Policy', href: '/legal/return-policy' },
+    { name: 'Return Policy', href: '/legal/refund-policy' },
     { name: 'Cookie Policy', href: '/legal/cookie-policy' },
   ],
 };

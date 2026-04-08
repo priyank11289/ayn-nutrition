@@ -4,6 +4,7 @@ import { ShoppingCart, Check, ChevronRight } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { products } from '../data/products';
 import { SEO } from '../components/SEO';
+import { trackProductView } from '../lib/analytics';
 
 export default function ProductPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -22,6 +23,9 @@ export default function ProductPage() {
       // Prefer Unflavored as default, otherwise the first available
       const defaultFlavor = product.flavors.includes('Unflavored') ? 'Unflavored' : product.flavors[0];
       setSelectedFlavor(defaultFlavor);
+      
+      // Track product view
+      trackProductView(product);
     }
     
     // Smooth scrolling is managed by JS now, so this is instant
@@ -296,6 +300,10 @@ export default function ProductPage() {
             </div>
             <div className="mt-4 pt-4 border-t-[3px] border-ayn-dark text-xs text-ayn-text-light">
               † Daily Value not established. Percent Daily Values are based on a 2,000 calorie diet.
+            </div>
+            <div className="mt-4 flex items-center justify-center gap-2 border-t border-gray-100 pt-4">
+              <span className="text-[10px] font-bold text-ayn-dark uppercase tracking-widest border border-ayn-dark px-2 py-0.5 rounded">FSSAI</span>
+              <span className="text-[10px] font-bold text-ayn-text-light">LIC NO: 100XXXXXXXXXXX</span>
             </div>
           </div>
         </div>

@@ -1,4 +1,6 @@
 import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
+import { pageview } from '@/lib/analytics';
 
 interface SEOProps {
   title: string;
@@ -19,6 +21,10 @@ export function SEO({
 }: SEOProps) {
   // Convert jsonLd to array to handle both single and multiple schemas
   const schemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+
+  useEffect(() => {
+    pageview(url);
+  }, [url]);
 
   return (
     <Helmet>
