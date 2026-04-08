@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /legal/
 
-Sitemap: https://aynnutrition.in/sitemap.xml
+Sitemap: https://ayn-nutrition.vercel.app/sitemap.xml

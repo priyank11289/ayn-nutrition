@@ -58,7 +58,8 @@ export const products: Product[] = [
     science: [
       { name: 'CREATINE MONOHYDRATE', dose: '2-3G PER SERVING', mechanism: 'A calibrated dose specifically selected for adolescent and young adult physiology. It provides the ATP regeneration needed for high-intensity sports without overwhelming the renal system.', research: 'Studies indicate lower doses (2-3g) are effective and safe for younger athletes when taken consistently without loading protocols.' },
       { name: 'CALCIUM + VITAMIN D3', dose: 'OPTIMIZED BLEND', mechanism: 'Critical co-factors for skeletal development during teenage years. As muscle mass increases from training, bone density must be supported.', research: 'Vitamin D3 increases calcium absorption by up to 65%, essential for structural integrity.' }
-    ]
+    ],
+    categoryId: 'creatine'
   },
   {
     id: 'hair-safe',
@@ -121,7 +122,8 @@ export const products: Product[] = [
       { name: 'SAW PALMETTO EXTRACT', dose: '50MG PER SERVING', mechanism: 'Saw Palmetto is a natural 5-alpha reductase inhibitor. This enzyme converts testosterone to DHT (dihydrotestosterone), which accelerates hair follicle miniaturization in predisposed individuals.', research: 'Clinical studies demonstrate Saw Palmetto\'s effectiveness in reducing DHT levels and supporting hair retention.' },
       { name: 'BIOTIN (VITAMIN B7)', dose: '30-50MCG PER SERVING', mechanism: 'Essential for keratin production — the protein that makes up hair, skin, and nails. Supports structural integrity of hair strands.', research: 'Supplementation improves hair strength and quality.' },
       { name: 'L-METHIONINE', dose: '100-250MG PER SERVING', mechanism: 'A sulfur-containing essential amino acid and a precursor to cysteine — a key component of keratin.', research: 'Sulfur amino acids like methionine are crucial for healthy hair growth and the disulfide bonds that give hair its strength.' }
-    ]
+    ],
+    categoryId: 'creatine'
   },
   {
     id: 'pro-athlete',
@@ -181,6 +183,17 @@ export const products: Product[] = [
       { name: 'TRI-CREATINE COMPLEX', dose: '5G TOTAL', mechanism: 'A precise blend of Monohydrate, HCL, and Malate forms. Targets multiple absorption pathways to ensure maximum cellular uptake without gastrointestinal distress.', research: 'Utilizing varied creatine salts has been shown to improve solubility and time-to-peak plasma concentration.' },
       { name: 'BETAINE ANHYDROUS', dose: '2.5G PER SERVING', mechanism: 'An osmolyte that regulates cellular hydration. It pulls water into muscle cells, protecting them against stress and significantly increasing power output.', research: '2.5g daily betaine supplementation has been clinically proven to enhance bench press power and muscle volume.' },
       { name: 'TAURINE', dose: '1G PER SERVING', mechanism: 'Works synergistically with creatine to enhance intracellular water retention and muscle endurance, while improving neuromuscular firing.', research: 'Taurine supplementation mitigates exercise-induced oxidative stress and improves time to exhaustion.' }
-    ]
+    ],
+    categoryId: 'creatine'
   },
+];
+
+export const categories = [
+  {
+    id: 'creatine',
+    slug: 'creatine',
+    name: 'Creatine Formulations',
+    description: 'Scientifically formulated creatine blends for specific performance goals, from hair safety to junior athlete support.',
+    productIds: ['junior-safe', 'hair-safe', 'pro-athlete']
+  }
 ];

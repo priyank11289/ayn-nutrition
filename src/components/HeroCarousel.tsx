@@ -7,22 +7,22 @@ const images = [
   {
     id: 1,
     url: '/images/hero-products.png',
-    alt: 'AYN Nutrition Creatine Products',
+    alt: "AYN Nutrition Specialized Creatine Range — India's First Personalized Creatine for Athletes",
   },
   {
     id: 2,
     url: '/images/Hair-Safe.png',
-    alt: 'Hair Safe Creatine',
+    alt: "AYN Hair Safe Creatine — Advanced DHT-Protection Formula for Hair-Conscious Gym-Goers",
   },
   {
     id: 3,
     url: '/images/Junior-Safe.png',
-    alt: 'Junior Safe Creatine',
+    alt: "AYN Junior Safe Creatine — Bone-Safe Supplement Formulated for Teen & Young Athletes",
   },
   {
     id: 4,
     url: '/images/Athletes.png',
-    alt: 'Pro Athlete Creatine',
+    alt: "AYN Pro Athletes Creatine — High-Performance Triple-Blend Formula for Elite Muscle Gains",
   },
 ];
 

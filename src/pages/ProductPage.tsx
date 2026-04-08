@@ -6,8 +6,8 @@ import { products } from '../data/products';
 import { SEO } from '../components/SEO';
 
 export default function ProductPage() {
-  const { id } = useParams<{ id: string }>();
-  const product = products.find(p => p.id === id);
+  const { slug } = useParams<{ slug: string }>();
+  const product = products.find(p => p.slug === slug);
   const { addToCart } = useCart();
 
   const [selectedServings, setSelectedServings] = useState<number>(30);
@@ -52,6 +52,8 @@ export default function ProductPage() {
     });
   };
 
+  const productUrl = `https://ayn-nutrition.vercel.app/products/${product.slug}`;
+
   const productJsonLd = {
     "@context": "https://schema.org/",
     "@type": "Product",
@@ -64,20 +66,46 @@ export default function ProductPage() {
     },
     "offers": {
       "@type": "Offer",
-      "url": `https://ayn-nutrition.vercel.app/product/${product.id}`,
+      "url": productUrl,
       "priceCurrency": "INR",
       "price": currentVariant.price,
       "availability": "https://schema.org/InStock"
     }
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org/",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://ayn-nutrition.vercel.app/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Creatine",
+        "item": "https://ayn-nutrition.vercel.app/category/creatine"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": product.name,
+        "item": productUrl
+      }
+    ]
+  };
+
   return (
     <div className="bg-white min-h-screen pt-24 lg:pt-32 animation-fade-in">
       <SEO 
         title={`${product.name} — ${product.badge} | AYN Nutrition`}
-        description={product.longDescription}
+        description={product.longDescription.slice(0, 155)}
         image={`https://ayn-nutrition.vercel.app${product.image}`}
-        jsonLd={productJsonLd}
+        url={productUrl}
+        jsonLd={[productJsonLd, breadcrumbJsonLd]}
       />
       {/* Breadcrumb */}
       <div className="container mx-auto px-6 max-w-7xl mb-8">
@@ -101,7 +129,7 @@ export default function ProductPage() {
               </div>
               <img 
                 src={product.image} 
-                alt={product.name} 
+                alt={`${product.name} - India's First Personalized Creatine`} 
                 className="w-full h-full object-contain drop-shadow-2xl mix-blend-multiply" 
               />
             </div>
@@ -349,13 +377,13 @@ export default function ProductPage() {
             {products.filter(p => p.id !== product.id).map((otherProduct) => (
               <Link 
                 key={otherProduct.id}
-                to={`/product/${otherProduct.id}`}
+                to={`/products/${otherProduct.slug}`}
                 className={`group flex items-center bg-white rounded-3xl overflow-hidden border-2 ${otherProduct.borderColor} hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
               >
                 <div className={`w-1/3 aspect-square ${otherProduct.bgColor} p-4 flex items-center justify-center`}>
                   <img 
                     src={otherProduct.image} 
-                    alt={otherProduct.name} 
+                    alt={`${otherProduct.name} - India's First Personalized Creatine`} 
                     className="w-full h-full object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500" 
                   />
                 </div>

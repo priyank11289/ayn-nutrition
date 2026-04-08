@@ -5,9 +5,7 @@ import Footer from './sections/Footer';
 import StickyCart from './sections/StickyCart';
 import { CartProvider } from './context/CartContext';
 import { Toaster } from '@/components/ui/sonner';
-import Home from './pages/Home';
-import ProductPage from './pages/ProductPage';
-import LegalPage from './pages/LegalPage';
+import { Home, ProductPage, CategoryPage, LegalPage } from './pages';
 
 import AnnouncementBar from './components/AnnouncementBar';
 
@@ -21,7 +19,8 @@ function App() {
           <main className="flex-1">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/product/:id" element={<ProductPage />} />
+              <Route path="/products/:slug" element={<ProductPage />} />
+              <Route path="/category/:slug" element={<CategoryPage />} />
               <Route path="/legal/:slug" element={<LegalPage />} />
             </Routes>
           </main>

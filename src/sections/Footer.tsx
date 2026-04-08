@@ -36,11 +36,11 @@ const YouTubeColor = () => (
 
 const footerLinks = {
   shop: [
-    { name: 'Junior Safe Creatine', href: '#products' },
-    { name: 'Hair Safe Creatine', href: '#products' },
-    { name: 'Pro Athletes Creatine', href: '#products' },
-    { name: 'Complete Stack', href: '#products' },
-    { name: 'Subscriptions', href: '#faq' },
+    { name: 'Junior Safe Creatine', href: '/products/junior-safe' },
+    { name: 'Hair Safe Creatine', href: '/products/hair-safe' },
+    { name: 'Pro Athletes Creatine', href: '/products/pro-athlete' },
+    { name: 'Complete Stack', href: '/category/creatine' },
+    { name: 'Subscriptions', href: '/#faq' },
   ],
   learn: [
     { name: 'The Science', href: '#science' },

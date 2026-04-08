@@ -41,7 +41,7 @@ export default function ScienceSection() {
             <div className="relative rounded-3xl overflow-hidden">
               <img
                 src="/images/science-lab.png"
-                alt="AYN Nutrition Laboratory"
+                alt="AYN Nutrition High-Tech Laboratory — Testing India's Purest Personalized Creatine"
                 className="w-full h-auto object-cover"
               />
               {/* Overlay gradient */}

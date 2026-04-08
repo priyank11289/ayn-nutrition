@@ -68,7 +68,7 @@ export default function ExpertPanel() {
                   <div className={`absolute inset-0 ${expert.bgColor} rounded-full blur-xl opacity-50 group-hover:opacity-70 transition-opacity`}></div>
                   <img
                     src={expert.image}
-                    alt={expert.name}
+                    alt={`${expert.name} — ${expert.credentials} and AYN Nutrition Expert Advisor`}
                     className="relative w-full h-full object-cover rounded-full border-4 border-white shadow-lg grayscale group-hover:grayscale-0 transition-all duration-500"
                   />
                   {/* Experience Badge */}

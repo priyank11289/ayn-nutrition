@@ -62,5 +62,5 @@ export interface Product {
   howToUse?: HowToUse[];
   science?: ScienceInfo[];
   tags?: string[];
-  categoryId?: string;
+  categoryId: string;
 }

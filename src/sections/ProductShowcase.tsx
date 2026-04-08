@@ -57,7 +57,7 @@ export default function ProductShowcase() {
           {products.map((product, index) => (
             <FadeIn key={product.id} delay={0.1 + (index * 0.15)} className="h-full">
               <div
-                onClick={() => navigate(`/product/${product.id}`)}
+                onClick={() => navigate(`/products/${product.slug}`)}
                 className={`group relative bg-white rounded-3xl overflow-hidden border-2 cursor-pointer ${product.borderColor} 
                   hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 h-full flex flex-col`}
               >
@@ -70,7 +70,7 @@ export default function ProductShowcase() {
               <div className={`relative ${product.bgColor} p-8 flex items-center justify-center h-64`}>
                 <img
                   src={product.image}
-                  alt={product.name}
+                  alt={`${product.name} - India's First Personalized Creatine`}
                   className="h-full w-auto object-contain group-hover:scale-110 transition-transform duration-500"
                 />
                 {/* Quick ingredient preview on hover */}
@@ -163,7 +163,7 @@ export default function ProductShowcase() {
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
-                        navigate(`/product/${product.id}`);
+                        navigate(`/products/${product.slug}`);
                       }}
                       className="p-2 border-2 border-gray-200 rounded-lg hover:border-ayn-dark transition-colors flex items-center"
                     >

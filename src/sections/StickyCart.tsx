@@ -59,7 +59,7 @@ export default function StickyCart() {
                     >
                       <img
                         src={item.image}
-                        alt={item.name}
+                        alt={`${item.name} - India's First Personalized Creatine`}
                         className="w-20 h-20 object-contain bg-white rounded-lg mix-blend-multiply"
                       />
                       <div className="flex-1">

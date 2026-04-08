@@ -48,7 +48,8 @@ export default function Home() {
     <>
       <SEO 
         title="AYN Nutrition — India's First Personalized Creatine | Buy Online"
-        description="Discover AYN Nutrition's specialized creatine formulas. Engineered for teen athletes, hair protection, and elite performance. Formulated for you, fueled by science."
+        description="Shop India's first personalized creatine! AYN Nutrition offers specialized formulas for hair safety, teen athletes, and elite performance. High purity, lab tested."
+        url="https://ayn-nutrition.vercel.app/"
         jsonLd={organizationJsonLd}
       />
       <Hero />

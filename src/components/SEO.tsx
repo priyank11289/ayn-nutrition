@@ -6,7 +6,7 @@ interface SEOProps {
   url?: string;
   image?: string;
   type?: string;
-  jsonLd?: Record<string, any>;
+  jsonLd?: Record<string, any> | Record<string, any>[];
 }
 
 export function SEO({
@@ -17,11 +17,15 @@ export function SEO({
   type = 'website',
   jsonLd,
 }: SEOProps) {
+  // Convert jsonLd to array to handle both single and multiple schemas
+  const schemas = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+
   return (
     <Helmet>
       {/* Standard SEO */}
       <title>{title}</title>
       <meta name="description" content={description} />
+      <link rel="canonical" href={url} />
 
       {/* Open Graph / Facebook */}
       <meta property="og:type" content={type} />
@@ -38,11 +42,11 @@ export function SEO({
       <meta name="twitter:image" content={image} />
 
       {/* Structured Data (JSON-LD) */}
-      {jsonLd && (
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLd)}
+      {schemas.map((schema, idx) => (
+        <script key={idx} type="application/ld+json">
+          {JSON.stringify(schema)}
         </script>
-      )}
+      ))}
     </Helmet>
   );
 }

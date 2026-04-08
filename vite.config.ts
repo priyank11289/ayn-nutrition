@@ -12,14 +12,15 @@ export default defineConfig({
     Sitemap({
       hostname: 'https://ayn-nutrition.vercel.app',
       dynamicRoutes: [
-        '/product/junior-safe',
-        '/product/hair-safe',
-        '/product/pro-athlete',
-        '/privacy-policy',
-        '/terms-and-conditions',
-        '/refund-policy',
-        '/shipping-policy',
-        '/contact-us'
+        '/products/junior-safe',
+        '/products/hair-safe',
+        '/products/pro-athlete',
+        '/category/creatine',
+        '/legal/privacy-policy',
+        '/legal/terms-and-conditions',
+        '/legal/refund-policy',
+        '/legal/shipping-policy',
+        '/legal/contact-us'
       ]
     })
   ],

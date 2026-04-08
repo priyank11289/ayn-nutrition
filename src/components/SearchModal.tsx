@@ -110,12 +110,12 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                               key={product.id}
                               onClick={() => {
                                 onClose();
-                                navigate(`/product/${product.id}`);
+                                navigate(`/products/${product.slug}`);
                               }}
                               className="w-full text-left bg-white p-4 rounded-2xl flex items-center md:items-start gap-4 md:gap-6 shadow-sm hover:shadow-md transition-all border border-gray-100 hover:border-ayn-teal/30 group"
                             >
                               <div className={`w-20 h-20 md:w-24 md:h-24 rounded-2xl ${product.bgColor} border border-gray-100 flex items-center justify-center flex-shrink-0`}>
-                                <img src={product.image} alt={product.name} className="w-12 h-12 md:w-16 md:h-16 object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500" />
+                                <img src={product.image} alt={`${product.name} - India's First Personalized Creatine`} className="w-12 h-12 md:w-16 md:h-16 object-contain mix-blend-multiply group-hover:scale-110 transition-transform duration-500" />
                               </div>
                               
                               <div className="flex-1 pt-1">
