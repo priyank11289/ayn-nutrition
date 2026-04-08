@@ -10,6 +10,7 @@ const benefits = [
 
 export default function Newsletter() {
   const [email, setEmail] = useState('');
+  const [honeypot, setHoneypot] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -37,6 +38,11 @@ export default function Newsletter() {
     if (!email || !email.includes('@')) {
       toast.error('Please enter a valid email address');
       return;
+    }
+
+    // Honeypot check for bots
+    if (honeypot) {
+      return; // Silent return
     }
 
     setIsSubmitting(true);
@@ -95,7 +101,18 @@ export default function Newsletter() {
               </div>
 
               {/* Form */}
-              <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+              <form onSubmit={handleSubmit} className="max-w-md mx-auto relative">
+                {/* Honeypot field (hidden from assistive tech and view) */}
+                <input
+                  type="text"
+                  name="user_website"
+                  style={{ display: 'none' }}
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                />
+                
                 <div className="flex flex-col sm:flex-row gap-3">
                   <div className="flex-1 relative">
                     <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-ayn-text-light" />

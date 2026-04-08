@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { useEffect } from 'react';
+import DOMPurify from 'dompurify';
 import { legalData } from '@/data/legal';
 
 export default function LegalPage() {
@@ -26,6 +27,8 @@ export default function LegalPage() {
     );
   }
 
+  const sanitizedContent = DOMPurify.sanitize(page.content);
+
   return (
     <div className="min-h-screen bg-white pt-32 lg:pt-40 pb-20 animation-fade-in">
       <div className="container mx-auto px-6 max-w-3xl">
@@ -37,7 +40,7 @@ export default function LegalPage() {
           className="text-ayn-text-light leading-relaxed 
                      [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:text-ayn-dark [&>h2]:mt-10 [&>h2]:mb-4
                      [&>p]:mb-6"
-          dangerouslySetInnerHTML={{ __html: page.content }} 
+          dangerouslySetInnerHTML={{ __html: sanitizedContent }} 
         />
         
         <div className="mt-16 pt-8 border-t border-gray-100 text-center text-sm text-gray-400">
